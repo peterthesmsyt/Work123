@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.1.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#FirstName, #LastName, #Occupation, #Hobbies, #Projects, #VisitedCity").keypress(function(key) {
+                if (!(key.charCode >= 48 && key.charCode < 58)) {
+                } else {
+                    return alert("You cannot include numbers in this field!!!")
+                }
+            });
+        });
+        //$('#SubmitForm').click(function()
+        //{
+        //   $('#SubmitForm').val("input");
+        //    console.log('hey');
+        //});
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+<!-- Contact Section -->
+<section id="contact">
+
+    <h2>Contact Us</h2>
+    <form id="superform">
+
+        <label for='FirstName'>First Name:</label>
+        <input type="text" id="FirstName" name="FirstName" required/>
+        <br>
+
+        <label for='LastName'>Last Name:</label>
+        <input type="text" id="LastName" name="LastName" required/>
+        <br>
+
+        <label for='EMail'>EMail:</label>
+        <input type="email" id="EMail" name="EMail" required/>
+        <br>
+
+        <label for='Occupation'>Occupation:</label>
+        <input type="text" id="Occupation" name="Occupation" required/>
+        <br>
+
+        <label for='Address'>Address:</label>
+        <textarea cols="20" rows="5" id="Address" name="Address" required></textarea>
+        <br>
+
+        <label for='VisitedCity'>Visited City:</label>
+        <input type="text" id="VisitedCity" name="VisitedCity" required/>
+        <br>
+
+        <label for='CSLanguages'>CS languages that you learnt:</label>
+        <textarea cols="20" rows="5" id="CSLanguages" name="CSLanguages" required></textarea>
+        <br>
+
+        <label for='School'>School:</label>
+        <input type="text" id="School" name="School" required/>
+        <br>
+
+        <label for='Hobbies'>Hobbies:</label>
+        <textarea cols="20" rows="5" id="Hobbies" name="Hobbies" required></textarea>
+        <br>
+
+        <label for='Projects'>Projects that you have done:</label>
+        <textarea cols="20" rows="5" id="Projects" name="Projects" required></textarea>
+        <br>
+
+
+
+
+
+    </form>
+    <input type="submit" id="testsub" name="testsub" value="Test Submission" onclick="userDidSubmit()">
+
+    <div class="container">
+        <h2>Submitted Information</h2>
+        <textarea cols="20" rows="20" id="SubmitForm" name="Submit" ></textarea>
+        <br>
+    </div>
+
+
+
+
+</section>
+
+<script>
+
+    function userDidSubmit() {
+
+        //grab all the form data
+        var queryString = $('#superform').serialize();
+        //then we split it by & sign and replace it with newlines
+        queryString = queryString.replace(/&/g, "\n")
+        //append it to our textbox
+        document.getElementById("SubmitForm").value += queryString
+
+    }
+
+</script>
+</body>
+</html>
