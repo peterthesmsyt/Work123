@@ -13,7 +13,7 @@ router.get('/Azia', function(req, res) {
 });
 
 router.get('/PhoTai', function(req, res) {
-	res.sendFile(__parentdirname + 'Hello, This is a Pho Tai website');
+	res.send('Hello, This is a Pho Tai website');
 });
 
 module.exports = router;
