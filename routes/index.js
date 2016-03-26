@@ -12,4 +12,8 @@ router.get('/Azia', function(req, res) {
 	res.sendFile(__parentdirname + '/public/views/azia.html');
 });
 
+router.get('/PhoTai', function(req, res) {
+	res.sendFile(__parentdirname + 'Hello, This is a Pho Tai website');
+});
+
 module.exports = router;
