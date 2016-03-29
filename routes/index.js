@@ -15,6 +15,10 @@ router.get('/Azia', function(req, res) {
 	res.sendFile(__parentdirname + '/public/views/azia.html');
 });
 
+router.get('/PhoTai', function(req, res){
+	res.sendfile(__parentdirname + '/public/views/photai.html');
+});
+
 router.get('/count/:ip', function(req, res) {
 	var userip = req.params.ip;
 	//totalcount = totalcount +ip 1;
